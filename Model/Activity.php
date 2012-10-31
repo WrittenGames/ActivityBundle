@@ -2,6 +2,8 @@
 
 namespace WG\ActivityBundle\Model;
 
+use WG\ActivityBundle\DependencyInjection\User\ActivityUserInterface;
+
 /**
  * Storage agnostic Activity object
  */
@@ -11,6 +13,11 @@ abstract class Activity
      * @var mixed
      */
     protected $id;
+    
+    /**
+     * @var object
+     */
+    protected $user;
     
     /**
      * @var string
@@ -29,6 +36,24 @@ abstract class Activity
     public function getId()
     {
         return $this->id;
+    }
+    
+    /**
+     * @return \WG\ActivityBundle\DependencyInjection\User\ActivityUserInterface
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+    
+    /**
+     * @param \WG\ActivityBundle\DependencyInjection\User\ActivityUserInterface $user
+     * @return \WG\ActivityBundle\Model\Activity
+     */
+    public function setUser( ActivityUserInterface $user )
+    {
+        $this->user = $user;
+        return $this;
     }
     
     /**

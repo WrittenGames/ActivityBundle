@@ -32,22 +32,38 @@ public function registerBundles()
 }
 ```
 
-## Step 3: Create your Activity class
+## Step 3: Extend and map your entities
 
-The bundle provides base classes which are already mapped for most fields to make it easier
-to create your entity. Here is how you use them:
+You will need to extend and map the following entities:
 
-1. Extend the base Activity class of your choice (the class to use depends of your storage)
-2. Map the id field. It must be protected as it is inherited from the parent class.
+1. Activity
+2. Work
+3 ...
 
-## Step 4: Import WGActivityBundle routing files
+The bundle provides base classes which are already mapped for most fields to make
+it easier to create your entity. Here is how you use them:
+
+1. Extend the base class of your choice (the class to use depends of your storage)
+2. Map the id and the user field.
+
+## Step 4: Configure the bundle to use your entities
+
+```
+# app/config/config.yml
+wg_activity:
+    model:
+        activity: MyProject\MyBundle\Entity\Activity
+        work: MyProject\MyBundle\Entity\Work
+```
+
+## Step 5: Import WGActivityBundle routing files
 ```
 # app/config/routing.yml
 wg_activity_bundle:
     resource: "@WGActivityBundle/Resources/config/routing/routing.yml"
 ```
 
-## Step 5: Update your database schema
+## Step 6: Update your database schema
 
 For ORM run the following command:
 
