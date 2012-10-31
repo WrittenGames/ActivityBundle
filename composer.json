@@ -1,0 +1,22 @@
+{
+    "name": "writtengames/activity-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony 2 bundle for activity tracking and timekeeping",
+    "keywords": ["activity", "timekeeping", "tracking"],
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "Moritz Kraft",
+            "email": "mo@writtengames.com",
+            "homepage": "www.writtengames.com"
+        }
+    ],
+    "require": {
+        "symfony/symfony": ">=2.1",
+        "stof/doctrine-extensions-bundle": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "WG\\ActivityBundle": "" }
+    },
+    "target-dir": "WG/ActivityBundle"
+}
