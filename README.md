@@ -8,7 +8,7 @@ Written Games ActivityBundle
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/WrittenGames/OpenIdUserBundle"
+            "url": "https://github.com/WrittenGames/ActivityBundle"
         }
     ],
     "require": {
@@ -27,33 +27,30 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new FOS\UserBundle\FOSUserBundle(),
+        new WG\ActivityBundle\WGActivityBundle(),
     );
 }
 ```
 
-## Step 3: Extend and map your entities
+## Step 3: Implement the bundle's UserInterface
 
-You will need to extend and map the following entities:
+In order for the bundle to work your User entity will need to implement
+WG\ActivityBundle\Model\UserInterface which declares two methods, getId()
+and getUsername(). Then you need to set it as a target entity in Doctrine's
+configuration (see step 4 below).
 
-1. Activity
-2. Work
-3 ...
-
-The bundle provides base classes which are already mapped for most fields to make
-it easier to create your entity. Here is how you use them:
-
-1. Extend the base class of your choice (the class to use depends of your storage)
-2. Map the id and the user field.
-
-## Step 4: Configure the bundle to use your entities
+## Step 4: Configure the bundle (example for Doctrine ORM)
 
 ```
 # app/config/config.yml
+
+doctrine:
+    orm:
+        resolve_target_entities:
+            WG\ActivityBundle\Model\UserInterface: WrittenGames\UserBundle\Entity\User
+
 wg_activity:
-    model:
-        activity: MyProject\MyBundle\Entity\Activity
-        work: MyProject\MyBundle\Entity\Work
+    db_driver: orm
 ```
 
 ## Step 5: Import WGActivityBundle routing files

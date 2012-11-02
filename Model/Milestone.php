@@ -2,23 +2,12 @@
 
 namespace WG\ActivityBundle\Model;
 
-use WG\ActivityBundle\DependencyInjection\User\ActivityUserInterface;
-use Doctrine\Common\Collections\ArrayCollection;
-
-/**
- * Storage agnostic Activity object
- */
-abstract class Activity
+class Milestone
 {
     /**
      * @var mixed
      */
     protected $id;
-    
-    /**
-     * @var object
-     */
-    protected $user;
     
     /**
      * @var string
@@ -28,17 +17,12 @@ abstract class Activity
     /**
      * @var string
      */
-    protected $description;
-    
-    /**
-     * @var string
-     */
     protected $slug;
     
     /**
      * @var \DateTime
      */
-    protected $updatedAt;
+    protected $dueBy;
     
     /**
      * @var \DateTime
@@ -66,7 +50,7 @@ abstract class Activity
     protected $root;
 
     /**
-     * @var WG\ActivityBundle\Entity\Activity
+     * @var WG\ActivityBundle\Entity\Milestone
      */
     protected $parent;
 
@@ -93,24 +77,6 @@ abstract class Activity
     }
     
     /**
-     * @return \WG\ActivityBundle\Model\ActivityUserInterface
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
-    
-    /**
-     * @param \WG\ActivityBundle\Model\ActivityUserInterface $user
-     * @return \WG\ActivityBundle\Model\Activity
-     */
-    public function setUser( ActivityUserInterface $user )
-    {
-        $this->user = $user;
-        return $this;
-    }
-    
-    /**
      * @return string
      */
     public function getTitle()
@@ -131,24 +97,6 @@ abstract class Activity
     /**
      * @return string
      */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-    
-    /**
-     * @param string $description
-     * @return \WG\ActivityBundle\Model\Activity
-     */
-    public function setDescription( $description )
-    {
-        $this->description = $description;
-        return $this;
-    }
-    
-    /**
-     * @return string
-     */
     public function getSlug()
     {
         return $this->slug;
@@ -161,24 +109,6 @@ abstract class Activity
     public function setSlug( $slug )
     {
         $this->slug = $slug;
-        return $this;
-    }
-    
-    /**
-     * @return \DateTime
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
-    
-    /**
-     * @param \DateTime $updatedAt
-     * @return \WG\ActivityBundle\Model\Activity
-     */
-    public function setUpdatedAt( $updatedAt )
-    {
-        $this->updatedAt = $updatedAt;
         return $this;
     }
     

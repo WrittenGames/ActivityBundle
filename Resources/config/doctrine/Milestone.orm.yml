@@ -1,7 +1,7 @@
-WG\ActivityBundle\Entity\Activity:
+WG\ActivityBundle\Entity\Milestone:
     type: entity
     repositoryClass: Gedmo\Tree\Entity\Repository\NestedTreeRepository
-    table: wg_activity__activity
+    table: wg_activity__milestone
     gedmo:
         tree:
             type: nested
@@ -10,14 +10,8 @@ WG\ActivityBundle\Entity\Activity:
             type: integer
             generator: { strategy: AUTO }
     manyToOne:
-        user:
-            targetEntity: WG\ActivityBundle\Model\UserInterface
-            inversedBy: activities
-            joinColumn:
-                name: user_id
-                referencedColumnName: id
         parent:
-            targetEntity: WG\ActivityBundle\Entity\Activity
+            targetEntity: WG\ActivityBundle\Entity\Milestone
             inversedBy: children
             joinColumn:
                 name: parent_id
@@ -35,8 +29,6 @@ WG\ActivityBundle\Entity\Activity:
         title:
             type: string
             length: 128
-        description:
-            type: text
         slug:
             type: string
             length: 128
@@ -45,12 +37,6 @@ WG\ActivityBundle\Entity\Activity:
                 slug:
                     fields:
                         - title
-        updatedAt:
-            column: updated_at
-            type: datetime
-            gedmo:
-                timestampable:
-                    on: update
         createdAt:
             column: created_at
             type: datetime
