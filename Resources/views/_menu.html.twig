@@ -10,9 +10,10 @@
             <a class="brand" href="{{ path( 'wg_activity_home' ) }}">writtengames ActivityBundle</a>
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li class="active"><a href="{{ path( 'wg_activity_home' ) }}">Home</a></li>
-                    <li><a href="{{ path( 'wg_activity_home' ) }}">Foo</a></li>
-                    <li><a href="{{ path( 'wg_activity_home' ) }}">Baa</a></li>
+                    <li {% if app.request.get('_route') == 'wg_activity_home' %}class="active"{% endif %}
+                        ><a href="{{ path( 'wg_activity_home' ) }}">Home</a></li>
+                    <li {% if app.request.get('_route') == 'wg_activity_milestones' %}class="active"{% endif %}
+                        ><a href="{{ path( 'wg_activity_milestones' ) }}">Milestones</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
