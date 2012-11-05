@@ -7,6 +7,6 @@ use WG\ActivityBundle\Model\Activity as AbstractActivity;
 /**
  * 
  */
-abstract class Activity extends AbstractActivity
+class Activity extends AbstractActivity
 {
 }

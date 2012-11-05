@@ -1,0 +1,32 @@
+{% extends 'WGActivityBundle::base.html.twig' %}
+
+{% block body %}
+    
+    <h2>Milestones</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Due by</th>
+                <th>Parent</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for milestone in milestones %}
+                <tr>
+                    <td>{{ milestone }}</td>
+                    <td>{{ milestone.dueBy|date( 'd-m-Y' ) }}</td>
+                    <td>{{ milestone.parent }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">No milestones created yet.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <a href="{{ path( 'wg_activity_milestones_new' ) }}">Create milestone</a>
+    
+{% endblock %}

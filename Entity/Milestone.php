@@ -7,6 +7,6 @@ use WG\ActivityBundle\Model\Milestone as AbstractMilestone;
 /**
  * 
  */
-abstract class Milestone extends AbstractMilestone
+class Milestone extends AbstractMilestone
 {
 }

@@ -2,6 +2,8 @@
 
 namespace WG\ActivityBundle\Model;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 class Milestone
 {
     /**
@@ -86,7 +88,7 @@ class Milestone
     
     /**
      * @param string $title
-     * @return \WG\ActivityBundle\Model\Activity
+     * @return \WG\ActivityBundle\Model\Milestone
      */
     public function setTitle( $title )
     {
@@ -104,11 +106,29 @@ class Milestone
     
     /**
      * @param string $slug
-     * @return \WG\ActivityBundle\Model\Activity
+     * @return \WG\ActivityBundle\Model\Milestone
      */
     public function setSlug( $slug )
     {
         $this->slug = $slug;
+        return $this;
+    }
+    
+    /**
+     * @return \DateTime
+     */
+    public function getDueBy()
+    {
+        return $this->dueBy;
+    }
+    
+    /**
+     * @param \DateTime $dueBy
+     * @return \WG\ActivityBundle\Model\Milestone
+     */
+    public function setDueBy( \DateTime $dueBy )
+    {
+        $this->dueBy = $dueBy;
         return $this;
     }
     
@@ -122,16 +142,16 @@ class Milestone
     
     /**
      * @param \DateTime $createdAt
-     * @return \WG\ActivityBundle\Model\Activity
+     * @return \WG\ActivityBundle\Model\Milestone
      */
-    public function setCreatedAt( $createdAt )
+    public function setCreatedAt( \DateTime $createdAt )
     {
         $this->createdAt = $createdAt;
         return $this;
     }
 
     /**
-     * @return \WG\ActivityBundle\Model\Activity $parent
+     * @return \WG\ActivityBundle\Model\Milestone $parent
      */
     public function getParent()
     {
@@ -139,12 +159,17 @@ class Milestone
     }
 
     /**
-     * @param \WG\ActivityBundle\Model\Activity $parent
-     * @return \WG\ActivityBundle\Model\Activity
+     * @param \WG\ActivityBundle\Model\Milestone $parent
+     * @return \WG\ActivityBundle\Model\Milestone
      */
-    public function setParent( Activity $parent = null )
+    public function setParent( Milestone $parent = null )
     {
         $this->parent = $parent; 
         return $this;   
+    }
+    
+    public function __toString()
+    {
+        return $this->title;
     }
 }

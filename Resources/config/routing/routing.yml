@@ -1,3 +1,23 @@
 wg_activity_home:
     pattern:  /
     defaults: { _controller: WGActivityBundle:Activity:index }
+
+##############
+# Milestones #
+##############
+
+wg_activity_milestones:
+    pattern:  /milestones
+    defaults: { _controller: WGActivityBundle:Milestone:list }
+
+wg_activity_milestones_new:
+    pattern:  /milestones/new
+    defaults: { _controller: WGActivityBundle:Milestone:new }
+
+wg_activity_milestones_edit:
+    pattern:  /milestones/{id}/edit
+    defaults: { _controller: WGActivityBundle:Milestone:edit }
+
+wg_activity_milestones_delete:
+    pattern:  /milestones/{id}/delete
+    defaults: { _controller: WGActivityBundle:Milestone:delete }

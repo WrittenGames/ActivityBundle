@@ -1,1 +1,10 @@
+parameters:
+    wg.activity.milestone_manager.class:  WG\ActivityBundle\Model\MilestoneManager
+    wg.activity.model.milestone.class:    WG\ActivityBundle\Entity\Milestone
 
+services:
+    wg.activity.milestone_manager:
+        class:  %wg.activity.milestone_manager.class%
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - %wg.activity.model.milestone.class%

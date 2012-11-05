@@ -26,6 +26,9 @@ WG\ActivityBundle\Entity\Milestone:
             orderBy:
                 lft: ASC
     fields:
+        dueBy:
+            column: due_by
+            type: datetime
         title:
             type: string
             length: 128

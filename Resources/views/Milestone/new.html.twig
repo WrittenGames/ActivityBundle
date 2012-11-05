@@ -1,0 +1,15 @@
+{% extends 'WGActivityBundle::base.html.twig' %}
+
+{% block body %}
+    
+    <h2>New milestone</h2>
+    
+    <form method="post">
+    
+        {{ form_widget( form ) }}
+        
+        <div><input type="submit" value="save" /></div>
+    
+    </form>
+    
+{% endblock %}
