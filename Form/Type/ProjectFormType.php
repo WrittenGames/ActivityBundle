@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class MilestoneFormType extends AbstractType
+class ProjectFormType extends AbstractType
 {
     protected $class;
 
@@ -30,15 +30,6 @@ class MilestoneFormType extends AbstractType
     public function buildForm( FormBuilderInterface $builder, array $options )
     {
         $builder->add( 'title' );
-        $builder->add( 'dueBy', 'date', array(
-            'input' => 'datetime',
-            'widget' => 'single_text',
-            'label' => 'Due by',
-        ));
-        $builder->add( 'parent', null, array( 
-            'empty_value' => 'none',
-            'required' => false,
-            'label' => 'Parent milestone',
-        ));
+        $builder->add( 'description', 'textarea' );
     }
 }

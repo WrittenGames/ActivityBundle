@@ -1,0 +1,19 @@
+services:
+    wg.activity.project.form:
+        class: Symfony\Component\Form\Form
+        factory_service: form.factory
+        factory_method: createNamed
+        arguments:
+            - wg_activity_project
+            - '@wg.activity.project.form.type'
+    wg.activity.project.form.type:
+        class:  WG\ActivityBundle\Form\Type\ProjectFormType
+        arguments:
+            - WG\ActivityBundle\Entity\Project
+    wg.activity.project.form.handler:
+        class: WG\ActivityBundle\Form\FormHandler
+        arguments:
+            - '@wg.activity.project.form'
+            - '@request'
+            - '@wg.activity.project_manager'
+        scope: request

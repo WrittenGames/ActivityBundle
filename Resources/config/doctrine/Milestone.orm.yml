@@ -19,9 +19,15 @@ WG\ActivityBundle\Entity\Milestone:
                 onDelete: SET NULL
             gedmo:
                 - treeParent
+        project:
+            targetEntity: WG\ActivityBundle\Entity\Project
+            inversedBy: milestones
+            joinColumn:
+                name: project_id
+                referencedColumnName: id
     oneToMany:
         children:
-            targetEntity: WG\ActivityBundle\Entity\Activity
+            targetEntity: WG\ActivityBundle\Entity\Milestone
             mappedBy: parent
             orderBy:
                 lft: ASC

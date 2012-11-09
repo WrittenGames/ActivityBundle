@@ -15,9 +15,11 @@ class WGActivityExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration( $configuration, $configs );
         // Services
-        $loader = new YamlFileLoader( $container, new FileLocator( __DIR__ . '/../Resources/config' ) );
-        $loader->load( 'milestone.yml' );
-        $loader->load( sprintf('%s.yml', $config['db_driver'] ));
+        $loader = new YamlFileLoader( $container, new FileLocator( __DIR__ . '/../Resources/config' ));
+        $loader->load( sprintf( 'storage/%s.yml', $config['db_driver'] ));
+        $loader->load( 'form/milestone.yml' );
+        $loader->load( 'form/project.yml' );
+        $loader->load( 'services.yml' );
         // Set parameters
         $container->setParameter( 'wg_activity.db_driver', $config['db_driver'] );
     }

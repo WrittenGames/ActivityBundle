@@ -2,19 +2,19 @@
 
 namespace WG\ActivityBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
+use WG\ActivityBundle\Controller\AbstractController;
 
 /**
  * 
  */
-class ActivityController extends Controller
+class ActivityController extends AbstractController
 {
     public function indexAction( Request $request )
     {
-        $em = $this->get( 'doctrine' )->getEntityManager();
+        $em = $this->container->get( 'doctrine' )->getEntityManager();
         $activityRepo = $em->getRepository( 'WGActivityBundle:Activity' );
-        return $this->render( 'WGActivityBundle:Activity:index.html.twig', array(
+        return $this->container->get( 'templating' )->renderResponse(
+            'WGActivityBundle:Activity:index.html.twig', array(
             'foo' => 'foo',
         ));
     }

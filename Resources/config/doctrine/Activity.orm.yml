@@ -25,6 +25,12 @@ WG\ActivityBundle\Entity\Activity:
                 onDelete: SET NULL
             gedmo:
                 - treeParent
+        project:
+            targetEntity: WG\ActivityBundle\Entity\Project
+            inversedBy: activities
+            joinColumn:
+                name: project_id
+                referencedColumnName: id
     oneToMany:
         children:
             targetEntity: WG\ActivityBundle\Entity\Activity
@@ -37,6 +43,15 @@ WG\ActivityBundle\Entity\Activity:
             length: 128
         description:
             type: text
+            nullable: true
+        timeEstimated:
+            column: time_estimated
+            type: integer
+            nullable: true
+        timeSpent:
+            column: time_spent
+            type: integer
+            nullable: true
         slug:
             type: string
             length: 128
@@ -45,18 +60,21 @@ WG\ActivityBundle\Entity\Activity:
                 slug:
                     fields:
                         - title
-        updatedAt:
-            column: updated_at
-            type: datetime
-            gedmo:
-                timestampable:
-                    on: update
         createdAt:
             column: created_at
             type: datetime
             gedmo:
                 timestampable:
                     on: create
+        updatedAt:
+            column: updated_at
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        completedAt:
+            column: completed_at
+            type: datetime
         lft:
             type: integer
             gedmo:

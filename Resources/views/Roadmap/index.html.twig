@@ -1,0 +1,114 @@
+{% extends 'WGActivityBundle::base.html.twig' %}
+
+{% set activities = [ { 'title': 'activity1' }, { 'title': 'activity2' } ] %}
+
+{% block body %}
+
+    <div style="float: right;">
+    
+        <div class="btn-group">
+            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                Team Members
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li style="font-style: italic;"><a href="#">All Team Members</a></li>
+                <li><a href="#">Alice</a></li>
+                <li><a href="#">Bob</a></li>
+                <li><a href="#">Claire</a></li>
+            </ul>
+        </div>
+    
+        <div class="btn-group">
+            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                Projects
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li style="font-style: italic;"><a href="#">All Projects</a></li>
+                {% for project in projects %}
+                    <li><a href="#">{{ project }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+    </div>
+    
+    <h1>
+        Roadmap {{ selectedProject }}
+        <small>Scale: <span id="scale">1</span></small>
+    </h1>
+    
+    <div class="row" style="margin-top: 20px;" id="wg-activity-roadmap-container">
+        
+        <div class="span12" id="foo"
+             style="border-bottom: 1px solid #888; height: 25px; background-color: #eee; cursor: crosshair;">
+        </div>
+        
+        <div class="span12"
+             id="wg-activity-roadmap"
+             style="position: relative; overflow: hidden; border: 1px dotted #aaa; cursor: pointer;">
+            <div id="road" style="width: 1700px;">
+                {% for activity in activities %}
+                    <div style="width: 800px; display: inline-block; height: 10px; background-color: #678; margin: 10px;"></div>
+                {% endfor %}
+            </div>
+        </div>
+        
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function()
+        {
+            $( '#foo' ).mouseover( createBar );
+            $( '#foo' ).mousemove( moveBar );
+            $( '#foo' ).mouseout( removeBar );
+            $( '#road' ).mouseover(function()
+            {
+                $( this ).css( 'background-color', '#ddd' );
+            });
+            $( '#road' ).mouseout(function()
+            {
+                $( this ).css( 'background', 'none' );
+            });
+            //$( '#road' ).draggable({ axis: 'x', distance: 10, grid: [20,20] });
+            $( '#road' ).draggable({ axis: 'x', distance: 10 });
+            //$( '#wg-activity-roadmap-container' ).scroll(function( event )
+            $( window ).mousewheel(function( event, delta )
+            {
+                if ( delta > 0 )
+                {
+                    //console.log( 'zoom in' );
+                }
+                else
+                {
+                    //console.log( 'zoom out' );
+                }
+            });
+        });
+        function createBar()
+        {
+            var offsetY = 157;
+            var height = $( window ).height() - offsetY;
+            var bar = $( '<div/>' );
+            bar.css( 'width', 0 );
+            bar.css( 'height', height );
+            bar.css( 'border-left', '1px dotted #000' );
+            bar.css( 'position', 'absolute' );
+            bar.css( 'top', offsetY );
+            bar.attr( 'id', 'wg-activity-roadmap-mouse-bar' );
+            $( '#wg-activity-roadmap-container' ).append( bar );
+        }
+        function removeBar()
+        {
+            $( '#wg-activity-roadmap-mouse-bar' ).remove();
+        }
+        function moveBar( event )
+        {
+            $( '#wg-activity-roadmap-mouse-bar' ).css( 'left', event.pageX );
+        }
+    </script>
+{% endblock %}

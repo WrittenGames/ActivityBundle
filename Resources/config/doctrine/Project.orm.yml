@@ -1,0 +1,46 @@
+WG\ActivityBundle\Entity\Project:
+    type: entity
+    table: wg_activity__project
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    manyToMany:
+        users:
+            targetEntity: WG\ActivityBundle\Model\UserInterface
+            joinTable:
+                name: wg_activity__project_user
+                joinColumns:
+                    project_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    user_id:
+                        referencedColumnName: id
+    oneToMany:
+        activities:
+            targetEntity: WG\ActivityBundle\Entity\Activity
+            mappedBy: project
+        milestones:
+            targetEntity: WG\ActivityBundle\Entity\Milestone
+            mappedBy: project
+    fields:
+        title:
+            type: string
+            length: 128
+        description:
+            type: text
+            nullable: true
+        slug:
+            type: string
+            length: 128
+            unique: true
+            gedmo:
+                slug:
+                    fields:
+                        - title
+        createdAt:
+            column: created_at
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create

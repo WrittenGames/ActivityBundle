@@ -1,0 +1,24 @@
+parameters:
+    wg.activity.instance_manager.class:  WG\ActivityBundle\Model\InstanceManager
+
+services:
+    wg.activity.project_manager:
+        class:  %wg.activity.instance_manager.class%
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - WG\ActivityBundle\Entity\Project
+    wg.activity.milestone_manager:
+        class:  %wg.activity.instance_manager.class%
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - WG\ActivityBundle\Entity\Milestone
+    wg.activity.activity_manager:
+        class:  %wg.activity.instance_manager.class%
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - WG\ActivityBundle\Entity\Activity
+    wg.activity.workweek_manager:
+        class:  %wg.activity.instance_manager.class%
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - WG\ActivityBundle\Entity\WorkWeek

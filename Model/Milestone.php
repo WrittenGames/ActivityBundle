@@ -12,6 +12,11 @@ class Milestone
     protected $id;
     
     /**
+     * @var object
+     */
+    protected $project;
+    
+    /**
      * @var string
      */
     protected $title;
@@ -151,7 +156,7 @@ class Milestone
     }
 
     /**
-     * @return \WG\ActivityBundle\Model\Milestone $parent
+     * @return \WG\ActivityBundle\Model\Milestone
      */
     public function getParent()
     {
@@ -164,10 +169,43 @@ class Milestone
      */
     public function setParent( Milestone $parent = null )
     {
-        $this->parent = $parent; 
-        return $this;   
+        $this->parent = $parent;
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getChildren()
+    {
+        return $this->children;   
+    }
+
+    /**
+     * @param \WG\ActivityBundle\Model\Milestone $child
+     * @return \WG\ActivityBundle\Model\Milestone
+     */
+    public function addChild( Milestone $child )
+    {
+        $this->children[] = $child;
+        return $this;
+    }
+
+    /**
+     * @param \WG\ActivityBundle\Model\Milestone $child
+     * @return \WG\ActivityBundle\Model\Milestone
+     */
+    public function removeChild( Milestone $child )
+    {
+        $this->children->removeElement( $child );
+        return $this;
     }
     
+    /**
+     * String representation
+     * 
+     * @return string
+     */
     public function __toString()
     {
         return $this->title;

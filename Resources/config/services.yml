@@ -1,0 +1,11 @@
+services:
+    wg.activity.business_time:
+        class: WG\ActivityBundle\Time\BusinessTime
+        arguments:
+            - '@doctrine.orm.entity_manager'
+    wg.twig.activity_extension:
+        class: WG\ActivityBundle\Twig\Extension\ActivityExtension
+        arguments:
+            - '@wg.activity.business_time'
+        tags:
+            - { name: twig.extension }

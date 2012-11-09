@@ -1,0 +1,9 @@
+
+{% for event in events %}
+    <div>
+        {% if event.user is defined %}
+            {{ event.user }}
+        {% endif %}
+        {{ event.event }} {{ event.entity }}
+    </div>
+{% endfor %}

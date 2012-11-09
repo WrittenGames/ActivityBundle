@@ -1,6 +1,30 @@
-wg_activity_home:
+wg_activity_dashboard:
     pattern:  /
-    defaults: { _controller: WGActivityBundle:Activity:index }
+    defaults: { _controller: WGActivityBundle:Dashboard:index }
+
+############
+# Projects #
+############
+
+wg_activity_projects:
+    pattern:  /projects
+    defaults: { _controller: WGActivityBundle:Project:list }
+
+wg_activity_projects_new:
+    pattern:  /projects/new
+    defaults: { _controller: WGActivityBundle:Project:new }
+
+wg_activity_projects_show:
+    pattern:  /projects/{id}
+    defaults: { _controller: WGActivityBundle:Project:show }
+
+wg_activity_projects_edit:
+    pattern:  /projects/{id}/edit
+    defaults: { _controller: WGActivityBundle:Project:edit }
+
+wg_activity_projects_delete:
+    pattern:  /projects/{id}/delete
+    defaults: { _controller: WGActivityBundle:Project:delete }
 
 ##############
 # Milestones #
@@ -14,6 +38,10 @@ wg_activity_milestones_new:
     pattern:  /milestones/new
     defaults: { _controller: WGActivityBundle:Milestone:new }
 
+wg_activity_milestones_show:
+    pattern:  /milestones/{id}
+    defaults: { _controller: WGActivityBundle:Milestone:show }
+
 wg_activity_milestones_edit:
     pattern:  /milestones/{id}/edit
     defaults: { _controller: WGActivityBundle:Milestone:edit }
@@ -21,3 +49,11 @@ wg_activity_milestones_edit:
 wg_activity_milestones_delete:
     pattern:  /milestones/{id}/delete
     defaults: { _controller: WGActivityBundle:Milestone:delete }
+
+###########
+# Roadmap #
+###########
+
+wg_activity_roadmap:
+    pattern:  /roadmap
+    defaults: { _controller: WGActivityBundle:Roadmap:index }

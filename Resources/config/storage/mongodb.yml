@@ -1,0 +1,19 @@
+parameters:
+    wg.activity.instance_manager.class:  WG\ActivityBundle\Model\InstanceManager
+
+services:
+    wg.activity.project_manager:
+        class:  %wg.activity.instance_manager.class%
+        arguments:
+            - '@doctrine.odm.mongodb.document_manager'
+            - WG\ActivityBundle\Document\Project
+    wg.activity.milestone_manager:
+        class:  %wg.activity.instance_manager.class%
+        arguments:
+            - '@doctrine.odm.mongodb.document_manager'
+            - WG\ActivityBundle\Document\Milestone
+    wg.activity.activity_manager:
+        class:  %wg.activity.instance_manager.class%
+        arguments:
+            - '@doctrine.odm.mongodb.document_manager'
+            - WG\ActivityBundle\Document\Activity

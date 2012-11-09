@@ -10,6 +10,7 @@
                 <th>Title</th>
                 <th>Due by</th>
                 <th>Parent</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,11 @@
                     <td>{{ milestone }}</td>
                     <td>{{ milestone.dueBy|date( 'd-m-Y' ) }}</td>
                     <td>{{ milestone.parent }}</td>
+                    <td>
+                        <a href="{{ path( 'wg_activity_milestones_edit', { id: milestone.id } ) }}">edit</a>
+                        |
+                        <a href="{{ path( 'wg_activity_milestones_delete', { id: milestone.id } ) }}">delete</a>
+                    </td>
                 </tr>
             {% else %}
                 <tr>

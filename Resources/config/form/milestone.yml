@@ -4,18 +4,16 @@ services:
         factory_service: form.factory
         factory_method: createNamed
         arguments:
-#            - %wg.activity.milestone.form.name%
             - wg_activity_milestone
             - '@wg.activity.milestone.form.type'
     wg.activity.milestone.form.type:
         class:  WG\ActivityBundle\Form\Type\MilestoneFormType
         arguments:
-            - %wg.activity.model.milestone.class%
+            - WG\ActivityBundle\Entity\Milestone
     wg.activity.milestone.form.handler:
-        class: WG\ActivityBundle\Form\Handler\MilestoneFormHandler
+        class: WG\ActivityBundle\Form\FormHandler
         arguments:
             - '@wg.activity.milestone.form'
             - '@request'
             - '@wg.activity.milestone_manager'
         scope: request
-        #public: false
