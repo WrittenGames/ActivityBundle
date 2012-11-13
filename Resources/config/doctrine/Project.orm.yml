@@ -8,6 +8,7 @@ WG\ActivityBundle\Entity\Project:
     manyToMany:
         users:
             targetEntity: WG\ActivityBundle\Model\UserInterface
+            #targetEntity: WrittenGames\UserBundle\Entity\User
             joinTable:
                 name: wg_activity__project_user
                 joinColumns:

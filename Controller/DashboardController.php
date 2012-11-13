@@ -11,6 +11,11 @@ class DashboardController extends AbstractController
 {
     public function indexAction()
     {
+        $em = $this->container->get( 'doctrine' )->getEntityManager();
+        $project = $em->getRepository( 'WGActivityBundle:Project' )->find( 2 );
+        $user = $em->getRepository( 'WrittenGamesUserBundle:User' )->find( 1 );
+        $project->addUser( $user );
+        $em->flush();
         return $this->container->get( 'templating' )->renderResponse(
             'WGActivityBundle:Dashboard:index.html.twig', array(
         ));

@@ -2,6 +2,7 @@
 
 namespace WG\ActivityBundle\Model;
 
+use WG\ActivityBundle\Model\Project;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class Milestone
@@ -209,5 +210,23 @@ class Milestone
     public function __toString()
     {
         return $this->title;
+    }
+    
+    /**
+     * @return \WG\ActivityBundle\Model\Project
+     */
+    public function getProject()
+    {
+        return $this->project;
+    }
+    
+    /**
+     * @param \WG\ActivityBundle\Model\Project $project
+     * @return \WG\ActivityBundle\Model\Milestone
+     */
+    public function setProject( Project $project )
+    {
+        $this->project = $project;
+        return $this;
     }
 }

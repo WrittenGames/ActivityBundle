@@ -12,7 +12,6 @@ WG\ActivityBundle\Entity\Activity:
     manyToOne:
         user:
             targetEntity: WG\ActivityBundle\Model\UserInterface
-            inversedBy: activities
             joinColumn:
                 name: user_id
                 referencedColumnName: id
@@ -75,6 +74,7 @@ WG\ActivityBundle\Entity\Activity:
         completedAt:
             column: completed_at
             type: datetime
+            nullable: true
         lft:
             type: integer
             gedmo:

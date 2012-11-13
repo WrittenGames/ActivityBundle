@@ -2,7 +2,7 @@
 
 namespace WG\ActivityBundle\Model;
 
-use WG\ActivityBundle\DependencyInjection\User\ActivityUserInterface;
+use WG\ActivityBundle\Model\UserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -115,6 +115,11 @@ abstract class Activity
      * @var Collection
      */
     protected $children;
+
+    /**
+     * @var WG\ActivityBundle\Entity\Milestone
+     */
+    protected $milestone;
     
     /**
      * Constructor
@@ -134,7 +139,7 @@ abstract class Activity
     }
     
     /**
-     * @return \WG\ActivityBundle\Model\ActivityUserInterface
+     * @return \WG\ActivityBundle\Model\UserInterface
      */
     public function getUser()
     {
@@ -142,10 +147,10 @@ abstract class Activity
     }
     
     /**
-     * @param \WG\ActivityBundle\Model\ActivityUserInterface $user
+     * @param \WG\ActivityBundle\Model\UserInterface $user
      * @return \WG\ActivityBundle\Model\Activity
      */
-    public function setUser( ActivityUserInterface $user )
+    public function setUser( UserInterface $user )
     {
         $this->user = $user;
         return $this;
@@ -321,5 +326,41 @@ abstract class Activity
     public function __toString()
     {
         return $this->title;
+    }
+    
+    /**
+     * @return \WG\ActivityBundle\Model\Project
+     */
+    public function getProject()
+    {
+        return $this->project;
+    }
+    
+    /**
+     * @param \WG\ActivityBundle\Model\Project $project
+     * @return \WG\ActivityBundle\Model\Activity
+     */
+    public function setProject( Project $project )
+    {
+        $this->project = $project;
+        return $this;
+    }
+    
+    /**
+     * @return \WG\ActivityBundle\Model\Milestone
+     */
+    public function getMilestone()
+    {
+        return $this->milestone;
+    }
+    
+    /**
+     * @param \WG\ActivityBundle\Model\Milestone $milestone
+     * @return \WG\ActivityBundle\Model\Activity
+     */
+    public function setMilestone( Milestone $milestone )
+    {
+        $this->milestone = $milestone;
+        return $this;
     }
 }
