@@ -1,5 +1,50 @@
+{% extends 'WGActivityBundle::base.html.twig' %}
 
-    <h2>Time</h2>
+{% block body %}
+
+    <h2>Punch the clock! Punch it hard!</h2>
     
-    {% include 'WGActivityBundle:TimeKeeping:punch_content.html.twig' %}
+    {% block wg_activity_content %}
     
+        {% include 'WGActivityBundle:TimeKeeping:punch_content.html.twig' %}
+    
+        {#
+        define a layout which just contains the JS block and whatever else
+        non-visible functionality you need, have another layout extend that,
+        which is your site layout, and the individual views extend the first
+        (minimal) layout
+        #}
+    
+    {% endblock %}
+    
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset( 'bundles/wgactivity/js/jquery.stopwatch.js' ) }}"></script>
+    <script>
+        $(function()
+        {
+            $( '.meep' ).each(function()
+            {
+                var options = {
+                    started: stopwatchStarted,
+                    stopped: stopwatchStopped
+                };
+                if ( $( this ).hasClass( 'running' ))
+                {
+                    options.autostart = true;
+                }
+                $( this ).stopwatch( options );
+            });
+        });
+        function stopwatchStarted()
+        {
+            console.log( 'started' );
+        }
+        function stopwatchStopped()
+        {
+            console.log( 'stopped' );
+        }
+    </script>
+{% endblock %}

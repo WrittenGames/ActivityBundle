@@ -1,0 +1,30 @@
+WG\ActivityBundle\Entity\WorkUnit:
+    type: entity
+    table: wg_activity__workunit
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    oneToOne:
+        user:
+            targetEntity: WG\ActivityBundle\Model\UserInterface
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+        activity:
+            targetEntity: WG\ActivityBundle\Entity\Activity
+            joinColumn:
+                name: activity_id
+                referencedColumnName: id
+    fields:
+        timeSpent:
+            column: time_spent
+            type: integer
+        tracking:
+            type: boolean
+        startedAt:
+            column: started_at
+            type: datetime
+        stoppedAt:
+            column: stopped_at
+            type: datetime

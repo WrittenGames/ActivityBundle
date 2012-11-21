@@ -2,12 +2,13 @@
 
 namespace WG\ActivityBundle\Model;
 
+use WG\ActivityBundle\Model\ManagerInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
 /**
  * Instance manager class
  */
-class InstanceManager
+class WorkWeekManager implements ManagerInterface
 {
     protected $class;
     protected $objectManager;
@@ -80,5 +81,15 @@ class InstanceManager
     public function findAll()
     {
         return $this->repository->findAll();
+    }
+    
+    /**
+     * Returns all entities fitting provided criteria
+     * 
+     * @return Collection
+     */
+    public function findBy( array $criteria = array() )
+    {
+        return $this->repository->findBy( $criteria );
     }
 }

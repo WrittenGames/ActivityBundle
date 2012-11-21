@@ -13,7 +13,16 @@ class ProjectController extends AbstractController
 {
     public function listAction()
     {
-        $projects = $this->container->get( 'wg.activity.project_manager' )->findAll();
+        if ( null !== $currentUser = $this->container->get( 'wg.activity.context.user' ))
+        {
+            $projects = $this->container
+                             ->get( 'wg.activity.project_manager' )
+                             ->findByUser( $currentUser );
+        }
+        else
+        {
+            $projects = $this->container->get( 'wg.activity.project_manager' )->findAll();
+        }
         return $this->container->get( 'templating' )->renderResponse(
             'WGActivityBundle:Project:list.html.twig',
             array( 'projects' => $projects )

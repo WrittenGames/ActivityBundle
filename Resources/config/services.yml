@@ -1,4 +1,12 @@
 services:
+    wg.activity.context.context_factory:
+        class: WG\ActivityBundle\DependencyInjection\Factory\ContextFactory
+        arguments:
+            - '@security.context'
+    wg.activity.context.user:
+        class: WG\ActivityBundle\Model\UserInterface
+        factory_service: wg.activity.context.context_factory
+        factory_method: getUser
     wg.activity.business_time:
         class: WG\ActivityBundle\Time\BusinessTime
         arguments:
@@ -7,5 +15,6 @@ services:
         class: WG\ActivityBundle\Twig\Extension\ActivityExtension
         arguments:
             - '@wg.activity.business_time'
+            - '@wg.activity.context.user'
         tags:
             - { name: twig.extension }

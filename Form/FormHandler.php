@@ -2,7 +2,7 @@
 
 namespace WG\ActivityBundle\Form;
 
-use WG\ActivityBundle\Model\InstanceManager;
+use WG\ActivityBundle\Model\ManagerInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -12,7 +12,7 @@ class FormHandler
     protected $instanceManager;
     protected $form;
 
-    public function __construct( FormInterface $form, Request $request, InstanceManager $instanceManager )
+    public function __construct( FormInterface $form, Request $request, ManagerInterface $instanceManager )
     {
         $this->form = $form;
         $this->request = $request;

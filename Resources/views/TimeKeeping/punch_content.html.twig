@@ -1,3 +1,20 @@
-<div style="">
-    <div style="">{{ "now"|date( 'g:ia' ) }}</div>
+
+{% if currentUnit %}
+
+    {% spaceless %}
+    <div class="punchclock tracking">
+        <span class="hours">{{ "now"|date( 'g' ) }}</span>
+        :
+        <span class="minutes">{{ "now"|date( 'i' ) }}</span>
+        :
+        <span class="seconds">{{ "now"|date( 's' ) }}</span>
+    </div>
+    {% endspaceless %}
+
+{% else %}
+
+<div class="wg-activity punchclock">
+    <i class="meep"></i>
 </div>
+
+{% endif %}

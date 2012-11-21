@@ -8,10 +8,12 @@ use Twig_Function_Method;
 class ActivityExtension extends Twig_Extension
 {
     protected $businessTime;
+    protected $currentUser;
 
-    public function __construct( $businessTime )
+    public function __construct( $businessTime, $currentUser )
     {
         $this->businessTime = $businessTime;
+        $this->currentUser = $currentUser;
     }
 
     public function getName()
@@ -29,5 +31,12 @@ class ActivityExtension extends Twig_Extension
     public function formatActivityTime( $activity, $timeInMinutes )
     {
         return $this->businessTime->humaniseMinutes( $activity, $timeInMinutes );
+    }
+    
+    public function getGlobals()
+    {
+        return array(
+            'wgActivityCurrentUser' => $this->currentUser,
+        );
     }
 }
