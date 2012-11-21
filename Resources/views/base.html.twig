@@ -13,10 +13,10 @@
                 body * {
                     font-family: 'Orienta', sans-serif;
                 }
-                div.wg-activity.project-list-item {
+                div.cisco-activity.project-list-item {
                     margin: 0.5em auto;
                 }
-                div.wg-activity.project-list-item a {
+                div.cisco-activity.project-list-item a {
                     text-decoration: none;
                 }
             </style>
@@ -33,24 +33,24 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="{{ path( 'wg_activity_dashboard' ) }}">ActivityBundle</a>
+                    <a class="brand" href="{{ path( 'cisco_activity_dashboard' ) }}">ActivityBundle</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             {% set route = app.request.get('_route') %}
-                            <li {% if route == 'wg_activity_dashboard' %}class="active"{% endif %}>
-                                <a href="{{ path( 'wg_activity_dashboard' ) }}">
+                            <li {% if route == 'cisco_activity_dashboard' %}class="active"{% endif %}>
+                                <a href="{{ path( 'cisco_activity_dashboard' ) }}">
                                     <i class="icon-home icon-white"></i>
                                     Dashboard
                                 </a>
                             </li>
-                            <li {% if route == 'wg_activity_projects' %}class="active"{% endif %}>
-                                <a href="{{ path( 'wg_activity_projects' ) }}">
+                            <li {% if route == 'cisco_activity_projects' %}class="active"{% endif %}>
+                                <a href="{{ path( 'cisco_activity_projects' ) }}">
                                     <i class="icon-briefcase icon-white"></i>
                                     Projects
                                 </a>
                             </li>
-                            <li {% if route == 'wg_activity_roadmap' %}class="active"{% endif %}>
-                                <a href="{{ path( 'wg_activity_roadmap' ) }}">
+                            <li {% if route == 'cisco_activity_roadmap' %}class="active"{% endif %}>
+                                <a href="{{ path( 'cisco_activity_roadmap' ) }}">
                                     <i class="icon-road icon-white"></i>
                                     Roadmap
                                 </a>
@@ -58,7 +58,7 @@
                         </ul>
                     </div>
                     {% if is_granted( 'IS_AUTHENTICATED_FULLY' ) %}
-                        Current user: {{ wgActivityCurrentUser.username }}
+                        Current user: {{ ciscoActivityCurrentUser.username }}
                     {% endif %}
                 </div>
             </div>
@@ -73,7 +73,7 @@
             <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
             <script src="https://raw.github.com/brandonaaron/jquery-mousewheel/master/jquery.mousewheel.js"></script>
             <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-            <script src="{{ asset( 'bundles/wgactivity/js/activity.js' ) }}"></script>
+            <script src="{{ asset( 'bundles/ciscoactivity/js/activity.js' ) }}"></script>
         {% endblock %}
     </body>
 </html>

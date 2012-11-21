@@ -1,7 +1,7 @@
-WG\ActivityBundle\Entity\Milestone:
+CiscoSystems\ActivityBundle\Entity\Milestone:
     type: entity
     repositoryClass: Gedmo\Tree\Entity\Repository\NestedTreeRepository
-    table: wg_activity__milestone
+    table: cisco_activity__milestone
     gedmo:
         tree:
             type: nested
@@ -11,7 +11,7 @@ WG\ActivityBundle\Entity\Milestone:
             generator: { strategy: AUTO }
     manyToOne:
         parent:
-            targetEntity: WG\ActivityBundle\Entity\Milestone
+            targetEntity: CiscoSystems\ActivityBundle\Entity\Milestone
             inversedBy: children
             joinColumn:
                 name: parent_id
@@ -20,14 +20,14 @@ WG\ActivityBundle\Entity\Milestone:
             gedmo:
                 - treeParent
         project:
-            targetEntity: WG\ActivityBundle\Entity\Project
+            targetEntity: CiscoSystems\ActivityBundle\Entity\Project
             inversedBy: milestones
             joinColumn:
                 name: project_id
                 referencedColumnName: id
     oneToMany:
         children:
-            targetEntity: WG\ActivityBundle\Entity\Milestone
+            targetEntity: CiscoSystems\ActivityBundle\Entity\Milestone
             mappedBy: parent
             orderBy:
                 lft: ASC

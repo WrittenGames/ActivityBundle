@@ -1,12 +1,12 @@
-{% extends 'WGActivityBundle::base.html.twig' %}
+{% extends 'CiscoSystemsActivityBundle::base.html.twig' %}
 
 {% block body %}
 
     <h2>Punch the clock! Punch it hard!</h2>
     
-    {% block wg_activity_content %}
+    {% block cisco_activity_content %}
     
-        {% include 'WGActivityBundle:TimeKeeping:punch_content.html.twig' %}
+        {% include 'CiscoSystemsActivityBundle:TimeKeeping:punch_content.html.twig' %}
     
         {#
         define a layout which just contains the JS block and whatever else
@@ -21,7 +21,7 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset( 'bundles/wgactivity/js/jquery.stopwatch.js' ) }}"></script>
+    <script src="{{ asset( 'bundles/ciscoactivity/js/jquery.stopwatch.js' ) }}"></script>
     <script>
         $(function()
         {

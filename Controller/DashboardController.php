@@ -1,8 +1,8 @@
 <?php
 
-namespace WG\ActivityBundle\Controller;
+namespace CiscoSystems\ActivityBundle\Controller;
 
-use WG\ActivityBundle\Controller\AbstractController;
+use CiscoSystems\ActivityBundle\Controller\AbstractController;
 
 /**
  * 
@@ -12,12 +12,12 @@ class DashboardController extends AbstractController
     public function indexAction()
     {
 //        $em = $this->container->get( 'doctrine' )->getEntityManager();
-//        $project = $em->getRepository( 'WGActivityBundle:Project' )->find( 2 );
+//        $project = $em->getRepository( 'CiscoSystemsActivityBundle:Project' )->find( 2 );
 //        $user = $em->getRepository( 'WrittenGamesUserBundle:User' )->find( 1 );
 //        $project->addUser( $user );
 //        $em->flush();
         return $this->container->get( 'templating' )->renderResponse(
-            'WGActivityBundle:Dashboard:index.html.twig', array(
+            'CiscoSystemsActivityBundle:Dashboard:index.html.twig', array(
         ));
     }
     
@@ -33,7 +33,7 @@ class DashboardController extends AbstractController
             array( 'user' => 'Claire', 'event' => 'worked 5 hours on activity', 'entity' => 'Foo Baa' ),
         );
         return $this->container->get( 'templating' )->renderResponse(
-            'WGActivityBundle:Dashboard:events.html.twig', array(
+            'CiscoSystemsActivityBundle:Dashboard:events.html.twig', array(
             'events' => $events,
         ));
     }

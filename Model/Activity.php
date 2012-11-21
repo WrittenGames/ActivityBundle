@@ -1,8 +1,8 @@
 <?php
 
-namespace WG\ActivityBundle\Model;
+namespace CiscoSystems\ActivityBundle\Model;
 
-use WG\ActivityBundle\Model\UserInterface;
+use CiscoSystems\ActivityBundle\Model\UserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -107,7 +107,7 @@ abstract class Activity
     protected $root;
 
     /**
-     * @var WG\ActivityBundle\Entity\Activity
+     * @var CiscoSystems\ActivityBundle\Entity\Activity
      */
     protected $parent;
 
@@ -117,7 +117,7 @@ abstract class Activity
     protected $children;
 
     /**
-     * @var WG\ActivityBundle\Entity\Milestone
+     * @var CiscoSystems\ActivityBundle\Entity\Milestone
      */
     protected $milestone;
     
@@ -139,7 +139,7 @@ abstract class Activity
     }
     
     /**
-     * @return \WG\ActivityBundle\Model\UserInterface
+     * @return \CiscoSystems\ActivityBundle\Model\UserInterface
      */
     public function getUser()
     {
@@ -147,8 +147,8 @@ abstract class Activity
     }
     
     /**
-     * @param \WG\ActivityBundle\Model\UserInterface $user
-     * @return \WG\ActivityBundle\Model\Activity
+     * @param \CiscoSystems\ActivityBundle\Model\UserInterface $user
+     * @return \CiscoSystems\ActivityBundle\Model\Activity
      */
     public function setUser( UserInterface $user )
     {
@@ -166,7 +166,7 @@ abstract class Activity
     
     /**
      * @param string $title
-     * @return \WG\ActivityBundle\Model\Activity
+     * @return \CiscoSystems\ActivityBundle\Model\Activity
      */
     public function setTitle( $title )
     {
@@ -184,7 +184,7 @@ abstract class Activity
     
     /**
      * @param string $description
-     * @return \WG\ActivityBundle\Model\Activity
+     * @return \CiscoSystems\ActivityBundle\Model\Activity
      */
     public function setDescription( $description )
     {
@@ -202,7 +202,7 @@ abstract class Activity
     
     /**
      * @param integer $timeEstimated
-     * @return \WG\ActivityBundle\Model\Activity
+     * @return \CiscoSystems\ActivityBundle\Model\Activity
      */
     public function setTimeEstimated( $timeEstimated )
     {
@@ -220,7 +220,7 @@ abstract class Activity
     
     /**
      * @param integer $timeSpent
-     * @return \WG\ActivityBundle\Model\Activity
+     * @return \CiscoSystems\ActivityBundle\Model\Activity
      */
     public function setTimeSpent( $timeSpent )
     {
@@ -238,7 +238,7 @@ abstract class Activity
     
     /**
      * @param string $slug
-     * @return \WG\ActivityBundle\Model\Activity
+     * @return \CiscoSystems\ActivityBundle\Model\Activity
      */
     public function setSlug( $slug )
     {
@@ -256,7 +256,7 @@ abstract class Activity
     
     /**
      * @param \DateTime $createdAt
-     * @return \WG\ActivityBundle\Model\Activity
+     * @return \CiscoSystems\ActivityBundle\Model\Activity
      */
     public function setCreatedAt( $createdAt )
     {
@@ -274,7 +274,7 @@ abstract class Activity
     
     /**
      * @param \DateTime $updatedAt
-     * @return \WG\ActivityBundle\Model\Activity
+     * @return \CiscoSystems\ActivityBundle\Model\Activity
      */
     public function setUpdatedAt( $updatedAt )
     {
@@ -292,7 +292,7 @@ abstract class Activity
     
     /**
      * @param \DateTime $completedAt
-     * @return \WG\ActivityBundle\Model\Activity
+     * @return \CiscoSystems\ActivityBundle\Model\Activity
      */
     public function setCompletedAt( $completedAt )
     {
@@ -301,7 +301,7 @@ abstract class Activity
     }
 
     /**
-     * @return \WG\ActivityBundle\Model\Activity $parent
+     * @return \CiscoSystems\ActivityBundle\Model\Activity $parent
      */
     public function getParent()
     {
@@ -309,8 +309,8 @@ abstract class Activity
     }
 
     /**
-     * @param \WG\ActivityBundle\Model\Activity $parent
-     * @return \WG\ActivityBundle\Model\Activity
+     * @param \CiscoSystems\ActivityBundle\Model\Activity $parent
+     * @return \CiscoSystems\ActivityBundle\Model\Activity
      */
     public function setParent( Activity $parent = null )
     {
@@ -329,7 +329,7 @@ abstract class Activity
     }
     
     /**
-     * @return \WG\ActivityBundle\Model\Project
+     * @return \CiscoSystems\ActivityBundle\Model\Project
      */
     public function getProject()
     {
@@ -337,8 +337,8 @@ abstract class Activity
     }
     
     /**
-     * @param \WG\ActivityBundle\Model\Project $project
-     * @return \WG\ActivityBundle\Model\Activity
+     * @param \CiscoSystems\ActivityBundle\Model\Project $project
+     * @return \CiscoSystems\ActivityBundle\Model\Activity
      */
     public function setProject( Project $project )
     {
@@ -347,7 +347,7 @@ abstract class Activity
     }
     
     /**
-     * @return \WG\ActivityBundle\Model\Milestone
+     * @return \CiscoSystems\ActivityBundle\Model\Milestone
      */
     public function getMilestone()
     {
@@ -355,8 +355,8 @@ abstract class Activity
     }
     
     /**
-     * @param \WG\ActivityBundle\Model\Milestone $milestone
-     * @return \WG\ActivityBundle\Model\Activity
+     * @param \CiscoSystems\ActivityBundle\Model\Milestone $milestone
+     * @return \CiscoSystems\ActivityBundle\Model\Activity
      */
     public function setMilestone( Milestone $milestone )
     {

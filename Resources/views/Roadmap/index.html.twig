@@ -1,4 +1,4 @@
-{% extends 'WGActivityBundle::base.html.twig' %}
+{% extends 'CiscoSystemsActivityBundle::base.html.twig' %}
 
 {% set activities = [ { 'title': 'activity1' }, { 'title': 'activity2' } ] %}
 
@@ -39,14 +39,14 @@
         <small>Scale: <span id="scale">1</span></small>
     </h1>
     
-    <div class="row" style="margin-top: 20px;" id="wg-activity-roadmap-container">
+    <div class="row" style="margin-top: 20px;" id="cisco-activity-roadmap-container">
         
         <div class="span12" id="foo"
              style="border-bottom: 1px solid #888; height: 25px; background-color: #eee; cursor: text;">
         </div>
         
         <div class="span12"
-             id="wg-activity-roadmap"
+             id="cisco-activity-roadmap"
              style="position: relative; overflow: hidden; border: 1px dotted #aaa; cursor: pointer;">
             <div id="road" style="width: 1700px;">
                 {% for activity in activities %}
@@ -76,7 +76,7 @@
             });
             //$( '#road' ).draggable({ axis: 'x', distance: 10, grid: [20,20] });
             $( '#road' ).draggable({ axis: 'x', distance: 10 });
-            //$( '#wg-activity-roadmap-container' ).scroll(function( event )
+            //$( '#cisco-activity-roadmap-container' ).scroll(function( event )
             $( window ).mousewheel(function( event, delta )
             {
                 if ( delta > 0 )
@@ -99,16 +99,16 @@
             bar.css( 'border-left', '1px dotted #000' );
             bar.css( 'position', 'absolute' );
             bar.css( 'top', offsetY );
-            bar.attr( 'id', 'wg-activity-roadmap-mouse-bar' );
-            $( '#wg-activity-roadmap-container' ).append( bar );
+            bar.attr( 'id', 'cisco-activity-roadmap-mouse-bar' );
+            $( '#cisco-activity-roadmap-container' ).append( bar );
         }
         function removeBar()
         {
-            $( '#wg-activity-roadmap-mouse-bar' ).remove();
+            $( '#cisco-activity-roadmap-mouse-bar' ).remove();
         }
         function moveBar( event )
         {
-            $( '#wg-activity-roadmap-mouse-bar' ).css( 'left', event.pageX );
+            $( '#cisco-activity-roadmap-mouse-bar' ).css( 'left', event.pageX );
         }
     </script>
 {% endblock %}

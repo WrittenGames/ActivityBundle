@@ -1,10 +1,10 @@
 <?php
 
-namespace WG\ActivityBundle\Model;
+namespace CiscoSystems\ActivityBundle\Model;
 
-use WG\ActivityBundle\Model\Activity;
-use WG\ActivityBundle\Model\Milestone;
-use WG\ActivityBundle\Model\UserInterface;
+use CiscoSystems\ActivityBundle\Model\Activity;
+use CiscoSystems\ActivityBundle\Model\Milestone;
+use CiscoSystems\ActivityBundle\Model\UserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class Project
@@ -78,7 +78,7 @@ class Project
     
     /**
      * @param string $title
-     * @return \WG\ActivityBundle\Model\Project
+     * @return \CiscoSystems\ActivityBundle\Model\Project
      */
     public function setTitle( $title )
     {
@@ -96,7 +96,7 @@ class Project
     
     /**
      * @param string $description
-     * @return \WG\ActivityBundle\Model\Project
+     * @return \CiscoSystems\ActivityBundle\Model\Project
      */
     public function setDescription( $description )
     {
@@ -114,7 +114,7 @@ class Project
     
     /**
      * @param string $slug
-     * @return \WG\ActivityBundle\Model\Project
+     * @return \CiscoSystems\ActivityBundle\Model\Project
      */
     public function setSlug( $slug )
     {
@@ -132,7 +132,7 @@ class Project
     
     /**
      * @param \DateTime $createdAt
-     * @return \WG\ActivityBundle\Model\Project
+     * @return \CiscoSystems\ActivityBundle\Model\Project
      */
     public function setCreatedAt( \DateTime $createdAt )
     {
@@ -149,8 +149,8 @@ class Project
     }
 
     /**
-     * @param \WG\ActivityBundle\Model\UserInterface $user
-     * @return \WG\ActivityBundle\Model\Project
+     * @param \CiscoSystems\ActivityBundle\Model\UserInterface $user
+     * @return \CiscoSystems\ActivityBundle\Model\Project
      */
     public function addUser( UserInterface $user )
     {
@@ -159,8 +159,8 @@ class Project
     }
 
     /**
-     * @param \WG\ActivityBundle\Model\UserInterface $user
-     * @return \WG\ActivityBundle\Model\Project
+     * @param \CiscoSystems\ActivityBundle\Model\UserInterface $user
+     * @return \CiscoSystems\ActivityBundle\Model\Project
      */
     public function removeUser( Milestone $user )
     {
@@ -177,8 +177,8 @@ class Project
     }
 
     /**
-     * @param \WG\ActivityBundle\Model\Milestone $milestone
-     * @return \WG\ActivityBundle\Model\Project
+     * @param \CiscoSystems\ActivityBundle\Model\Milestone $milestone
+     * @return \CiscoSystems\ActivityBundle\Model\Project
      */
     public function addMilestone( Milestone $milestone )
     {
@@ -187,8 +187,8 @@ class Project
     }
 
     /**
-     * @param \WG\ActivityBundle\Model\Milestone $milestone
-     * @return \WG\ActivityBundle\Model\Project
+     * @param \CiscoSystems\ActivityBundle\Model\Milestone $milestone
+     * @return \CiscoSystems\ActivityBundle\Model\Project
      */
     public function removeMilestone( Milestone $milestone )
     {
@@ -205,8 +205,8 @@ class Project
     }
 
     /**
-     * @param \WG\ActivityBundle\Model\Activity $activity
-     * @return \WG\ActivityBundle\Model\Project
+     * @param \CiscoSystems\ActivityBundle\Model\Activity $activity
+     * @return \CiscoSystems\ActivityBundle\Model\Project
      */
     public function addActivity( Activity $activity )
     {
@@ -215,8 +215,8 @@ class Project
     }
 
     /**
-     * @param \WG\ActivityBundle\Model\Activity $activity
-     * @return \WG\ActivityBundle\Model\Project
+     * @param \CiscoSystems\ActivityBundle\Model\Activity $activity
+     * @return \CiscoSystems\ActivityBundle\Model\Project
      */
     public function removeActivity( Activity $activity )
     {

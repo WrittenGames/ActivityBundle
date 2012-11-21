@@ -1,11 +1,11 @@
 <?php
 
-namespace WG\ActivityBundle;
+namespace CiscoSystems\ActivityBundle;
 
-//use WG\ActivityBundle\DependencyInjection\Compiler\BundleConfigCompilerPass;
+//use CiscoSystems\ActivityBundle\DependencyInjection\Compiler\BundleConfigCompilerPass;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class WGActivityBundle extends Bundle
+class CiscoSystemsActivityBundle extends Bundle
 {
     public function getNamespace()
     {

@@ -1,9 +1,9 @@
 <?php
 
-namespace WG\ActivityBundle\Model;
+namespace CiscoSystems\ActivityBundle\Model;
 
-use WG\ActivityBundle\Model\UserInterface;
-use WG\ActivityBundle\Model\ManagerInterface;
+use CiscoSystems\ActivityBundle\Model\UserInterface;
+use CiscoSystems\ActivityBundle\Model\ManagerInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
 /**
@@ -98,7 +98,7 @@ class ProjectManager implements ManagerInterface
      * Returns all Project entities for provided user
      * or all Projects entities if no user provided
      * 
-     * @param \WG\ActivityBundle\Model\UserInterface $user
+     * @param \CiscoSystems\ActivityBundle\Model\UserInterface $user
      * @return Collection
      */
     public function findByUser( UserInterface $user = null )

@@ -1,6 +1,6 @@
 <?php
 
-namespace WG\ActivityBundle\Model;
+namespace CiscoSystems\ActivityBundle\Model;
 
 use Doctrine\Common\Persistence\ObjectManager;
 

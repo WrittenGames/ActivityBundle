@@ -1,4 +1,4 @@
-{% extends 'WGActivityBundle::base.html.twig' %}
+{% extends 'CiscoSystemsActivityBundle::base.html.twig' %}
 
 {% block body %}
     
@@ -20,9 +20,9 @@
                     <td>{{ milestone.dueBy|date( 'd-m-Y' ) }}</td>
                     <td>{{ milestone.parent }}</td>
                     <td>
-                        <a href="{{ path( 'wg_activity_milestones_edit', { id: milestone.id } ) }}">edit</a>
+                        <a href="{{ path( 'cisco_activity_milestones_edit', { id: milestone.id } ) }}">edit</a>
                         |
-                        <a href="{{ path( 'wg_activity_milestones_delete', { id: milestone.id } ) }}">delete</a>
+                        <a href="{{ path( 'cisco_activity_milestones_delete', { id: milestone.id } ) }}">delete</a>
                     </td>
                 </tr>
             {% else %}
@@ -33,6 +33,6 @@
         </tbody>
     </table>
     
-    <a href="{{ path( 'wg_activity_milestones_new' ) }}">Create milestone</a>
+    <a href="{{ path( 'cisco_activity_milestones_new' ) }}">Create milestone</a>
     
 {% endblock %}

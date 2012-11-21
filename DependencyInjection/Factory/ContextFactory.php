@@ -1,6 +1,6 @@
 <?php
 
-namespace WG\ActivityBundle\DependencyInjection\Factory;
+namespace CiscoSystems\ActivityBundle\DependencyInjection\Factory;
 
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
@@ -17,7 +17,7 @@ class ContextFactory
     }
 
     /**
-     * @return \WG\ActivityBundle\Model\UserInterface
+     * @return \CiscoSystems\ActivityBundle\Model\UserInterface
      */
     public function getUser()
     {

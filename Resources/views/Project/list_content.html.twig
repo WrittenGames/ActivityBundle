@@ -1,5 +1,5 @@
 {% for project in projects %}
-    <div class="wg-activity project-list-item">
+    <div class="cisco-activity project-list-item">
         <a href="#">
             <i class="icon-briefcase"></i>
             {{ project }}
@@ -9,7 +9,7 @@
     <p>No projects defined yet.</p>
 {% endfor %}
     
-<a class="btn btn-small" href="{{ path( 'wg_activity_projects_new' ) }}">
+<a class="btn btn-small" href="{{ path( 'cisco_activity_projects_new' ) }}">
     <i class="icon-plus-sign"></i>
     Create project
 </a>

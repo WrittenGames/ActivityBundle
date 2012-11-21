@@ -1,59 +1,59 @@
-wg_activity_dashboard:
+cisco_activity_dashboard:
     pattern:  /
-    defaults: { _controller: WGActivityBundle:Dashboard:index }
+    defaults: { _controller: CiscoSystemsActivityBundle:Dashboard:index }
 
 ############
 # Projects #
 ############
 
-wg_activity_projects:
+cisco_activity_projects:
     pattern:  /projects
-    defaults: { _controller: WGActivityBundle:Project:list }
+    defaults: { _controller: CiscoSystemsActivityBundle:Project:list }
 
-wg_activity_projects_new:
+cisco_activity_projects_new:
     pattern:  /projects/new
-    defaults: { _controller: WGActivityBundle:Project:new }
+    defaults: { _controller: CiscoSystemsActivityBundle:Project:new }
 
-wg_activity_projects_show:
+cisco_activity_projects_show:
     pattern:  /projects/{id}
-    defaults: { _controller: WGActivityBundle:Project:show }
+    defaults: { _controller: CiscoSystemsActivityBundle:Project:show }
 
-wg_activity_projects_edit:
+cisco_activity_projects_edit:
     pattern:  /projects/{id}/edit
-    defaults: { _controller: WGActivityBundle:Project:edit }
+    defaults: { _controller: CiscoSystemsActivityBundle:Project:edit }
 
-wg_activity_projects_delete:
+cisco_activity_projects_delete:
     pattern:  /projects/{id}/delete
-    defaults: { _controller: WGActivityBundle:Project:delete }
+    defaults: { _controller: CiscoSystemsActivityBundle:Project:delete }
 
 ##############
 # Milestones #
 ##############
 
-wg_activity_milestones:
+cisco_activity_milestones:
     pattern:  /milestones
-    defaults: { _controller: WGActivityBundle:Milestone:list }
+    defaults: { _controller: CiscoSystemsActivityBundle:Milestone:list }
 
-wg_activity_milestones_new:
+cisco_activity_milestones_new:
     pattern:  /milestones/new
-    defaults: { _controller: WGActivityBundle:Milestone:new }
+    defaults: { _controller: CiscoSystemsActivityBundle:Milestone:new }
 
-wg_activity_milestones_show:
+cisco_activity_milestones_show:
     pattern:  /milestones/{id}
-    defaults: { _controller: WGActivityBundle:Milestone:show }
+    defaults: { _controller: CiscoSystemsActivityBundle:Milestone:show }
 
-wg_activity_milestones_edit:
+cisco_activity_milestones_edit:
     pattern:  /milestones/{id}/edit
-    defaults: { _controller: WGActivityBundle:Milestone:edit }
+    defaults: { _controller: CiscoSystemsActivityBundle:Milestone:edit }
 
-wg_activity_milestones_delete:
+cisco_activity_milestones_delete:
     pattern:  /milestones/{id}/delete
-    defaults: { _controller: WGActivityBundle:Milestone:delete }
+    defaults: { _controller: CiscoSystemsActivityBundle:Milestone:delete }
 
 ###########
 # Roadmap #
 ###########
 
-wg_activity_roadmap:
+cisco_activity_roadmap:
     pattern:  /roadmap
-    defaults: { _controller: WGActivityBundle:Roadmap:index }
+    defaults: { _controller: CiscoSystemsActivityBundle:Roadmap:index }

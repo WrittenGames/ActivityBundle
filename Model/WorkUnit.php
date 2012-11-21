@@ -1,9 +1,9 @@
 <?php
 
-namespace WG\ActivityBundle\Model;
+namespace CiscoSystems\ActivityBundle\Model;
 
-use WG\ActivityBundle\Model\UserInterface;
-use WG\ActivityBundle\Model\Activity;
+use CiscoSystems\ActivityBundle\Model\UserInterface;
+use CiscoSystems\ActivityBundle\Model\Activity;
 
 class WorkUnit
 {
@@ -13,12 +13,12 @@ class WorkUnit
     protected $id;
     
     /**
-     * @var \WG\ActivityBundle\Model\UserInterface
+     * @var \CiscoSystems\ActivityBundle\Model\UserInterface
      */
     protected $user;
     
     /**
-     * @var \WG\ActivityBundle\Model\Activity
+     * @var \CiscoSystems\ActivityBundle\Model\Activity
      */
     protected $activity;
     
@@ -59,7 +59,7 @@ class WorkUnit
     }
     
     /**
-     * @return \WG\ActivityBundle\Model\UserInterface
+     * @return \CiscoSystems\ActivityBundle\Model\UserInterface
      */
     public function getUser()
     {
@@ -67,8 +67,8 @@ class WorkUnit
     }
     
     /**
-     * @param \WG\ActivityBundle\Model\UserInterface
-     * @return \WG\ActivityBundle\Model\WorkWeek
+     * @param \CiscoSystems\ActivityBundle\Model\UserInterface
+     * @return \CiscoSystems\ActivityBundle\Model\WorkWeek
      */
     public function setUser( UserInterface $user )
     {
@@ -77,7 +77,7 @@ class WorkUnit
     }
     
     /**
-     * @return \WG\ActivityBundle\Model\Activity
+     * @return \CiscoSystems\ActivityBundle\Model\Activity
      */
     public function getActivity()
     {
@@ -85,8 +85,8 @@ class WorkUnit
     }
     
     /**
-     * @param \WG\ActivityBundle\Model\Activity $activity
-     * @return \WG\ActivityBundle\Model\WorkWeek
+     * @param \CiscoSystems\ActivityBundle\Model\Activity $activity
+     * @return \CiscoSystems\ActivityBundle\Model\WorkWeek
      */
     public function setActivity( Activity $activity )
     {
@@ -104,7 +104,7 @@ class WorkUnit
     
     /**
      * @param integer $timeSpent
-     * @return \WG\ActivityBundle\Model\WorkWeek
+     * @return \CiscoSystems\ActivityBundle\Model\WorkWeek
      */
     public function setTimeSpent( $timeSpent )
     {

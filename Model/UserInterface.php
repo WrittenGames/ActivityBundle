@@ -1,6 +1,6 @@
 <?php
 
-namespace WG\ActivityBundle\Model;
+namespace CiscoSystems\ActivityBundle\Model;
 
 /**
  * Must be implemented by your application's User object

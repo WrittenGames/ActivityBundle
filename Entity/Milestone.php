@@ -1,8 +1,8 @@
 <?php
 
-namespace WG\ActivityBundle\Entity;
+namespace CiscoSystems\ActivityBundle\Entity;
 
-use WG\ActivityBundle\Model\Milestone as AbstractMilestone;
+use CiscoSystems\ActivityBundle\Model\Milestone as AbstractMilestone;
 
 /**
  * 

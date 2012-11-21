@@ -1,6 +1,6 @@
 <?php
 
-namespace WG\ActivityBundle\Form\Type;
+namespace CiscoSystems\ActivityBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

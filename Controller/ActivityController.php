@@ -1,8 +1,8 @@
 <?php
 
-namespace WG\ActivityBundle\Controller;
+namespace CiscoSystems\ActivityBundle\Controller;
 
-use WG\ActivityBundle\Controller\AbstractController;
+use CiscoSystems\ActivityBundle\Controller\AbstractController;
 
 /**
  * 
@@ -12,9 +12,9 @@ class ActivityController extends AbstractController
     public function indexAction( Request $request )
     {
         $em = $this->container->get( 'doctrine' )->getEntityManager();
-        $activityRepo = $em->getRepository( 'WGActivityBundle:Activity' );
+        $activityRepo = $em->getRepository( 'CiscoSystemsActivityBundle:Activity' );
         return $this->container->get( 'templating' )->renderResponse(
-            'WGActivityBundle:Activity:index.html.twig', array(
+            'CiscoSystemsActivityBundle:Activity:index.html.twig', array(
             'foo' => 'foo',
         ));
     }

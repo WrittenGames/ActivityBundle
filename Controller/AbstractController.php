@@ -1,6 +1,6 @@
 <?php
 
-namespace WG\ActivityBundle\Controller;
+namespace CiscoSystems\ActivityBundle\Controller;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 

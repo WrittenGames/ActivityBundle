@@ -27,7 +27,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new WG\ActivityBundle\WGActivityBundle(),
+        new CiscoSystems\ActivityBundle\CiscoSystemsActivityBundle(),
     );
 }
 ```
@@ -35,7 +35,7 @@ public function registerBundles()
 ## Step 3: Implement the bundle's UserInterface
 
 In order for the bundle to work your User entity will need to implement
-WG\ActivityBundle\Model\UserInterface which declares two methods, getId()
+CiscoSystems\ActivityBundle\Model\UserInterface which declares two methods, getId()
 and getUsername(). Then you need to set it as a target entity in Doctrine's
 configuration (see step 4 below).
 
@@ -47,17 +47,17 @@ configuration (see step 4 below).
 doctrine:
     orm:
         resolve_target_entities:
-            WG\ActivityBundle\Model\UserInterface: WrittenGames\UserBundle\Entity\User
+            CiscoSystems\ActivityBundle\Model\UserInterface: WrittenGames\UserBundle\Entity\User
 
-wg_activity:
+cisco_activity:
     db_driver: orm
 ```
 
-## Step 5: Import WGActivityBundle routing files
+## Step 5: Import CiscoSystemsActivityBundle routing files
 ```
 # app/config/routing.yml
-wg_activity_bundle:
-    resource: "@WGActivityBundle/Resources/config/routing/routing.yml"
+cisco_activity_bundle:
+    resource: "@CiscoSystemsActivityBundle/Resources/config/routing/routing.yml"
 ```
 
 ## Step 6: Update your database schema

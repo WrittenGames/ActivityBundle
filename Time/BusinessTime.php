@@ -1,8 +1,8 @@
 <?php
 
-namespace WG\ActivityBundle\Time;
+namespace CiscoSystems\ActivityBundle\Time;
 
-use WG\ActivityBundle\Model\Activity;
+use CiscoSystems\ActivityBundle\Model\Activity;
 use Doctrine\Common\Persistence\ObjectManager;
 
 class BusinessTime
@@ -35,7 +35,7 @@ class BusinessTime
     {
         if ( null !== $timeInMinutes ) return '';
         $workWeek = $this->objectManager
-                         ->getRepository( 'WGActivityBundle:WorkWeek' )
+                         ->getRepository( 'CiscoSystemsActivityBundle:WorkWeek' )
                          ->findOneByUser( $activity->getUser() );
         $workDays = $workWeek ? $workWeek->getDays() : 5;
         $workHours = $workWeek ? $workWeek->getHours() : 8;

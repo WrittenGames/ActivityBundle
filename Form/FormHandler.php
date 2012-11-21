@@ -1,8 +1,8 @@
 <?php
 
-namespace WG\ActivityBundle\Form;
+namespace CiscoSystems\ActivityBundle\Form;
 
-use WG\ActivityBundle\Model\ManagerInterface;
+use CiscoSystems\ActivityBundle\Model\ManagerInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 

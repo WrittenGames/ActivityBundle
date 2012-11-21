@@ -1,13 +1,13 @@
-WG\ActivityBundle\Entity\WorkWeek:
+CiscoSystems\ActivityBundle\Entity\WorkWeek:
     type: entity
-    table: wg_activity__workweek
+    table: cisco_activity__workweek
     id:
         id:
             type: integer
             generator: { strategy: AUTO }
     oneToOne:
         user:
-            targetEntity: WG\ActivityBundle\Model\UserInterface
+            targetEntity: CiscoSystems\ActivityBundle\Model\UserInterface
             joinColumn:
                 name: user_id
                 referencedColumnName: id

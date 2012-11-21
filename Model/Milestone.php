@@ -1,8 +1,8 @@
 <?php
 
-namespace WG\ActivityBundle\Model;
+namespace CiscoSystems\ActivityBundle\Model;
 
-use WG\ActivityBundle\Model\Project;
+use CiscoSystems\ActivityBundle\Model\Project;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class Milestone
@@ -58,7 +58,7 @@ class Milestone
     protected $root;
 
     /**
-     * @var WG\ActivityBundle\Entity\Milestone
+     * @var CiscoSystems\ActivityBundle\Entity\Milestone
      */
     protected $parent;
 
@@ -94,7 +94,7 @@ class Milestone
     
     /**
      * @param string $title
-     * @return \WG\ActivityBundle\Model\Milestone
+     * @return \CiscoSystems\ActivityBundle\Model\Milestone
      */
     public function setTitle( $title )
     {
@@ -112,7 +112,7 @@ class Milestone
     
     /**
      * @param string $slug
-     * @return \WG\ActivityBundle\Model\Milestone
+     * @return \CiscoSystems\ActivityBundle\Model\Milestone
      */
     public function setSlug( $slug )
     {
@@ -130,7 +130,7 @@ class Milestone
     
     /**
      * @param \DateTime $dueBy
-     * @return \WG\ActivityBundle\Model\Milestone
+     * @return \CiscoSystems\ActivityBundle\Model\Milestone
      */
     public function setDueBy( \DateTime $dueBy )
     {
@@ -148,7 +148,7 @@ class Milestone
     
     /**
      * @param \DateTime $createdAt
-     * @return \WG\ActivityBundle\Model\Milestone
+     * @return \CiscoSystems\ActivityBundle\Model\Milestone
      */
     public function setCreatedAt( \DateTime $createdAt )
     {
@@ -157,7 +157,7 @@ class Milestone
     }
 
     /**
-     * @return \WG\ActivityBundle\Model\Milestone
+     * @return \CiscoSystems\ActivityBundle\Model\Milestone
      */
     public function getParent()
     {
@@ -165,8 +165,8 @@ class Milestone
     }
 
     /**
-     * @param \WG\ActivityBundle\Model\Milestone $parent
-     * @return \WG\ActivityBundle\Model\Milestone
+     * @param \CiscoSystems\ActivityBundle\Model\Milestone $parent
+     * @return \CiscoSystems\ActivityBundle\Model\Milestone
      */
     public function setParent( Milestone $parent = null )
     {
@@ -183,8 +183,8 @@ class Milestone
     }
 
     /**
-     * @param \WG\ActivityBundle\Model\Milestone $child
-     * @return \WG\ActivityBundle\Model\Milestone
+     * @param \CiscoSystems\ActivityBundle\Model\Milestone $child
+     * @return \CiscoSystems\ActivityBundle\Model\Milestone
      */
     public function addChild( Milestone $child )
     {
@@ -193,8 +193,8 @@ class Milestone
     }
 
     /**
-     * @param \WG\ActivityBundle\Model\Milestone $child
-     * @return \WG\ActivityBundle\Model\Milestone
+     * @param \CiscoSystems\ActivityBundle\Model\Milestone $child
+     * @return \CiscoSystems\ActivityBundle\Model\Milestone
      */
     public function removeChild( Milestone $child )
     {
@@ -213,7 +213,7 @@ class Milestone
     }
     
     /**
-     * @return \WG\ActivityBundle\Model\Project
+     * @return \CiscoSystems\ActivityBundle\Model\Project
      */
     public function getProject()
     {
@@ -221,8 +221,8 @@ class Milestone
     }
     
     /**
-     * @param \WG\ActivityBundle\Model\Project $project
-     * @return \WG\ActivityBundle\Model\Milestone
+     * @param \CiscoSystems\ActivityBundle\Model\Project $project
+     * @return \CiscoSystems\ActivityBundle\Model\Milestone
      */
     public function setProject( Project $project )
     {

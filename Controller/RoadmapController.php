@@ -1,8 +1,8 @@
 <?php
 
-namespace WG\ActivityBundle\Controller;
+namespace CiscoSystems\ActivityBundle\Controller;
 
-use WG\ActivityBundle\Controller\AbstractController;
+use CiscoSystems\ActivityBundle\Controller\AbstractController;
 
 /**
  * 
@@ -12,10 +12,10 @@ class RoadmapController extends AbstractController
     public function indexAction()
     {
         $em = $this->container->get( 'doctrine' )->getEntityManager();
-        $projects = $em->getRepository( 'WGActivityBundle:Project' )->findAll();
+        $projects = $em->getRepository( 'CiscoSystemsActivityBundle:Project' )->findAll();
         $selectedProject = $projects[0];
         return $this->container->get( 'templating' )->renderResponse(
-            'WGActivityBundle:Roadmap:index.html.twig', array(
+            'CiscoSystemsActivityBundle:Roadmap:index.html.twig', array(
             'projects' => $projects,
             'selectedProject' => $selectedProject,
         ));

@@ -1,6 +1,6 @@
 <?php
 
-namespace WG\ActivityBundle\Twig\Extension;
+namespace CiscoSystems\ActivityBundle\Twig\Extension;
 
 use Twig_Extension;
 use Twig_Function_Method;
@@ -36,7 +36,7 @@ class ActivityExtension extends Twig_Extension
     public function getGlobals()
     {
         return array(
-            'wgActivityCurrentUser' => $this->currentUser,
+            'ciscoActivityCurrentUser' => $this->currentUser,
         );
     }
 }

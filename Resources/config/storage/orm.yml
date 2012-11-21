@@ -1,33 +1,33 @@
 parameters:
-    wg.activity.project_manager.class:  WG\ActivityBundle\Model\ProjectManager
-    wg.activity.milestone_manager.class:  WG\ActivityBundle\Model\MilestoneManager
-    wg.activity.activity_manager.class:  WG\ActivityBundle\Model\ActivityManager
-    wg.activity.workweek_manager.class:  WG\ActivityBundle\Model\WorkWeekManager
-    wg.activity.workunit_manager.class:  WG\ActivityBundle\Model\WorkUnitManager
+    cisco.activity.project_manager.class:  CiscoSystems\ActivityBundle\Model\ProjectManager
+    cisco.activity.milestone_manager.class:  CiscoSystems\ActivityBundle\Model\MilestoneManager
+    cisco.activity.activity_manager.class:  CiscoSystems\ActivityBundle\Model\ActivityManager
+    cisco.activity.workweek_manager.class:  CiscoSystems\ActivityBundle\Model\WorkWeekManager
+    cisco.activity.workunit_manager.class:  CiscoSystems\ActivityBundle\Model\WorkUnitManager
 
 services:
-    wg.activity.project_manager:
-        class:  %wg.activity.project_manager.class%
+    cisco.activity.project_manager:
+        class:  %cisco.activity.project_manager.class%
         arguments:
             - '@doctrine.orm.entity_manager'
-            - WG\ActivityBundle\Entity\Project
-    wg.activity.milestone_manager:
-        class:  %wg.activity.milestone_manager.class%
+            - CiscoSystems\ActivityBundle\Entity\Project
+    cisco.activity.milestone_manager:
+        class:  %cisco.activity.milestone_manager.class%
         arguments:
             - '@doctrine.orm.entity_manager'
-            - WG\ActivityBundle\Entity\Milestone
-    wg.activity.activity_manager:
-        class:  %wg.activity.activity_manager.class%
+            - CiscoSystems\ActivityBundle\Entity\Milestone
+    cisco.activity.activity_manager:
+        class:  %cisco.activity.activity_manager.class%
         arguments:
             - '@doctrine.orm.entity_manager'
-            - WG\ActivityBundle\Entity\Activity
-    wg.activity.workweek_manager:
-        class:  %wg.activity.workweek_manager.class%
+            - CiscoSystems\ActivityBundle\Entity\Activity
+    cisco.activity.workweek_manager:
+        class:  %cisco.activity.workweek_manager.class%
         arguments:
             - '@doctrine.orm.entity_manager'
-            - WG\ActivityBundle\Entity\WorkWeek
-    wg.activity.workunit_manager:
-        class:  %wg.activity.workunit_manager.class%
+            - CiscoSystems\ActivityBundle\Entity\WorkWeek
+    cisco.activity.workunit_manager:
+        class:  %cisco.activity.workunit_manager.class%
         arguments:
             - '@doctrine.orm.entity_manager'
-            - WG\ActivityBundle\Entity\WorkUnit
+            - CiscoSystems\ActivityBundle\Entity\WorkUnit

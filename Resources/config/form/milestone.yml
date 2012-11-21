@@ -1,19 +1,19 @@
 services:
-    wg.activity.milestone.form:
+    cisco.activity.milestone.form:
         class: Symfony\Component\Form\Form
         factory_service: form.factory
         factory_method: createNamed
         arguments:
-            - wg_activity_milestone
-            - '@wg.activity.milestone.form.type'
-    wg.activity.milestone.form.type:
-        class:  WG\ActivityBundle\Form\Type\MilestoneFormType
+            - cisco_activity_milestone
+            - '@cisco.activity.milestone.form.type'
+    cisco.activity.milestone.form.type:
+        class:  CiscoSystems\ActivityBundle\Form\Type\MilestoneFormType
         arguments:
-            - WG\ActivityBundle\Entity\Milestone
-    wg.activity.milestone.form.handler:
-        class: WG\ActivityBundle\Form\FormHandler
+            - CiscoSystems\ActivityBundle\Entity\Milestone
+    cisco.activity.milestone.form.handler:
+        class: CiscoSystems\ActivityBundle\Form\FormHandler
         arguments:
-            - '@wg.activity.milestone.form'
+            - '@cisco.activity.milestone.form'
             - '@request'
-            - '@wg.activity.milestone_manager'
+            - '@cisco.activity.milestone_manager'
         scope: request

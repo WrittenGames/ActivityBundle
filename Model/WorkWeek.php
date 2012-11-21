@@ -1,8 +1,8 @@
 <?php
 
-namespace WG\ActivityBundle\Model;
+namespace CiscoSystems\ActivityBundle\Model;
 
-use WG\ActivityBundle\Model\UserInterface;
+use CiscoSystems\ActivityBundle\Model\UserInterface;
 
 class WorkWeek
 {
@@ -12,7 +12,7 @@ class WorkWeek
     protected $id;
     
     /**
-     * @var \WG\ActivityBundle\Model\UserInterface
+     * @var \CiscoSystems\ActivityBundle\Model\UserInterface
      */
     protected $user;
     
@@ -44,7 +44,7 @@ class WorkWeek
     }
     
     /**
-     * @return \WG\ActivityBundle\Model\UserInterface
+     * @return \CiscoSystems\ActivityBundle\Model\UserInterface
      */
     public function getUser()
     {
@@ -52,8 +52,8 @@ class WorkWeek
     }
     
     /**
-     * @param \WG\ActivityBundle\Model\UserInterface
-     * @return \WG\ActivityBundle\Model\WorkWeek
+     * @param \CiscoSystems\ActivityBundle\Model\UserInterface
+     * @return \CiscoSystems\ActivityBundle\Model\WorkWeek
      */
     public function setUser( UserInterface $user )
     {
@@ -71,7 +71,7 @@ class WorkWeek
     
     /**
      * @param integer $hours
-     * @return \WG\ActivityBundle\Model\WorkWeek
+     * @return \CiscoSystems\ActivityBundle\Model\WorkWeek
      */
     public function setHours( $hours )
     {
@@ -89,7 +89,7 @@ class WorkWeek
     
     /**
      * @param integer $days
-     * @return \WG\ActivityBundle\Model\WorkWeek
+     * @return \CiscoSystems\ActivityBundle\Model\WorkWeek
      */
     public function setDays( $days )
     {

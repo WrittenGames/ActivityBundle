@@ -1,5 +1,5 @@
 {
-    "name": "writtengames/activity-bundle",
+    "name": "cisco-systems/activity-bundle",
     "type": "symfony-bundle",
     "description": "Symfony 2 bundle for activity tracking and timekeeping",
     "keywords": ["activity", "timekeeping", "tracking"],
@@ -7,8 +7,8 @@
     "authors": [
         {
             "name": "Moritz Kraft",
-            "email": "mo@writtengames.com",
-            "homepage": "www.writtengames.com"
+            "email": "mokraft@cisco.com",
+            "homepage": "www.cisco.com"
         }
     ],
     "require": {
@@ -19,7 +19,7 @@
         "doctrine/mongodb-odm-bundle": "*"
     },
     "autoload": {
-        "psr-0": { "WG\\ActivityBundle": "" }
+        "psr-0": { "CiscoSystems\\ActivityBundle": "" }
     },
-    "target-dir": "WG/ActivityBundle"
+    "target-dir": "CiscoSystems/ActivityBundle"
 }

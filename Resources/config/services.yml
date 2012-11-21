@@ -1,20 +1,20 @@
 services:
-    wg.activity.context.context_factory:
-        class: WG\ActivityBundle\DependencyInjection\Factory\ContextFactory
+    cisco.activity.context.context_factory:
+        class: CiscoSystems\ActivityBundle\DependencyInjection\Factory\ContextFactory
         arguments:
             - '@security.context'
-    wg.activity.context.user:
-        class: WG\ActivityBundle\Model\UserInterface
-        factory_service: wg.activity.context.context_factory
+    cisco.activity.context.user:
+        class: CiscoSystems\ActivityBundle\Model\UserInterface
+        factory_service: cisco.activity.context.context_factory
         factory_method: getUser
-    wg.activity.business_time:
-        class: WG\ActivityBundle\Time\BusinessTime
+    cisco.activity.business_time:
+        class: CiscoSystems\ActivityBundle\Time\BusinessTime
         arguments:
             - '@doctrine.orm.entity_manager'
-    wg.twig.activity_extension:
-        class: WG\ActivityBundle\Twig\Extension\ActivityExtension
+    cisco.twig.activity_extension:
+        class: CiscoSystems\ActivityBundle\Twig\Extension\ActivityExtension
         arguments:
-            - '@wg.activity.business_time'
-            - '@wg.activity.context.user'
+            - '@cisco.activity.business_time'
+            - '@cisco.activity.context.user'
         tags:
             - { name: twig.extension }

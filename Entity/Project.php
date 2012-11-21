@@ -1,8 +1,8 @@
 <?php
 
-namespace WG\ActivityBundle\Entity;
+namespace CiscoSystems\ActivityBundle\Entity;
 
-use WG\ActivityBundle\Model\Project as AbstractProject;
+use CiscoSystems\ActivityBundle\Model\Project as AbstractProject;
 
 /**
  * 

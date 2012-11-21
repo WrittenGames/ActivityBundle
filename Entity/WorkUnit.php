@@ -1,8 +1,8 @@
 <?php
 
-namespace WG\ActivityBundle\Entity;
+namespace CiscoSystems\ActivityBundle\Entity;
 
-use WG\ActivityBundle\Model\WorkUnit as AbstractWorkUnit;
+use CiscoSystems\ActivityBundle\Model\WorkUnit as AbstractWorkUnit;
 
 /**
  * 

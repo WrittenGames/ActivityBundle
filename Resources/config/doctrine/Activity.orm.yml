@@ -1,7 +1,7 @@
-WG\ActivityBundle\Entity\Activity:
+CiscoSystems\ActivityBundle\Entity\Activity:
     type: entity
     repositoryClass: Gedmo\Tree\Entity\Repository\NestedTreeRepository
-    table: wg_activity__activity
+    table: cisco_activity__activity
     gedmo:
         tree:
             type: nested
@@ -11,12 +11,12 @@ WG\ActivityBundle\Entity\Activity:
             generator: { strategy: AUTO }
     manyToOne:
         user:
-            targetEntity: WG\ActivityBundle\Model\UserInterface
+            targetEntity: CiscoSystems\ActivityBundle\Model\UserInterface
             joinColumn:
                 name: user_id
                 referencedColumnName: id
         parent:
-            targetEntity: WG\ActivityBundle\Entity\Activity
+            targetEntity: CiscoSystems\ActivityBundle\Entity\Activity
             inversedBy: children
             joinColumn:
                 name: parent_id
@@ -25,14 +25,14 @@ WG\ActivityBundle\Entity\Activity:
             gedmo:
                 - treeParent
         project:
-            targetEntity: WG\ActivityBundle\Entity\Project
+            targetEntity: CiscoSystems\ActivityBundle\Entity\Project
             inversedBy: activities
             joinColumn:
                 name: project_id
                 referencedColumnName: id
     oneToMany:
         children:
-            targetEntity: WG\ActivityBundle\Entity\Activity
+            targetEntity: CiscoSystems\ActivityBundle\Entity\Activity
             mappedBy: parent
             orderBy:
                 lft: ASC

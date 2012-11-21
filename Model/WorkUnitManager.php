@@ -1,9 +1,9 @@
 <?php
 
-namespace WG\ActivityBundle\Model;
+namespace CiscoSystems\ActivityBundle\Model;
 
-use WG\ActivityBundle\Model\ManagerInterface;
-use WG\ActivityBundle\Model\UserInterface;
+use CiscoSystems\ActivityBundle\Model\ManagerInterface;
+use CiscoSystems\ActivityBundle\Model\UserInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\NonUniqueResultException;

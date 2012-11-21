@@ -1,13 +1,13 @@
 <?php
 
-namespace WG\ActivityBundle\DependencyInjection;
+namespace CiscoSystems\ActivityBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class WGActivityExtension extends Extension
+class CiscoSystemsActivityExtension extends Extension
 {
     public function load( array $configs, ContainerBuilder $container )
     {
@@ -21,6 +21,6 @@ class WGActivityExtension extends Extension
         $loader->load( 'form/project.yml' );
         $loader->load( 'services.yml' );
         // Set parameters
-        $container->setParameter( 'wg_activity.db_driver', $config['db_driver'] );
+        $container->setParameter( 'cisco_activity.db_driver', $config['db_driver'] );
     }
 }
