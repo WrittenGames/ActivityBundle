@@ -15,7 +15,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root( 'cisco_activity' );
+        $rootNode = $treeBuilder->root( 'cisco_systems_activity' );
 
         $supportedDrivers = array( 'orm', 'mongodb' );
 
