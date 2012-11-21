@@ -1,4 +1,4 @@
-Written Games ActivityBundle
+Cisco Systems ActivityBundle
 ============================
 
 ## Step 1: Install with composer
@@ -8,11 +8,11 @@ Written Games ActivityBundle
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/WrittenGames/ActivityBundle"
+            "url": "https://github.com/CiscoSystems/ActivityBundle"
         }
     ],
     "require": {
-        "writtengames/activity-bundle": "*"
+        "cisco-systems/activity-bundle": "*"
     }
 }
 ```
@@ -35,11 +35,13 @@ public function registerBundles()
 ## Step 3: Implement the bundle's UserInterface
 
 In order for the bundle to work your User entity will need to implement
-CiscoSystems\ActivityBundle\Model\UserInterface which declares two methods, getId()
-and getUsername(). Then you need to set it as a target entity in Doctrine's
-configuration (see step 4 below).
+CiscoSystems\ActivityBundle\Model\UserInterface which declares two methods,
+getId() and getUsername(). Then you need to set it as a target entity in
+Doctrine's configuration (see step 4 below).
 
 ## Step 4: Configure the bundle (example for Doctrine ORM)
+
+In this example, Acme\UserBundle\Entity\User is your User entity:
 
 ```
 # app/config/config.yml
@@ -47,7 +49,7 @@ configuration (see step 4 below).
 doctrine:
     orm:
         resolve_target_entities:
-            CiscoSystems\ActivityBundle\Model\UserInterface: WrittenGames\UserBundle\Entity\User
+            CiscoSystems\ActivityBundle\Model\UserInterface: Acme\UserBundle\Entity\User
 
 cisco_activity:
     db_driver: orm
