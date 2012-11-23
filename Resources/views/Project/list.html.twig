@@ -1,5 +1,14 @@
+{% extends app.request.get( 'embedded' ) ? 'CiscoSystemsActivityBundle::emptybase.html.twig' : 'CiscoSystemsActivityBundle::base.html.twig' %}
+
+{% block body %}
 
     <h2>Projects</h2>
     
-    {% include 'CiscoSystemsActivityBundle:Project:list_content.html.twig' %}
+    {% block cisco_activity_content %}
+    
+        {% include 'CiscoSystemsActivityBundle:Project:list_content.html.twig' %}
+    
+    {% endblock %}
+    
+{% endblock %}
     

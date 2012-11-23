@@ -1,4 +1,4 @@
-{% extends 'CiscoSystemsActivityBundle::base.html.twig' %}
+{% extends app.request.get( 'embedded' ) ? 'CiscoSystemsActivityBundle::emptybase.html.twig' : 'CiscoSystemsActivityBundle::base.html.twig' %}
 
 {% block body %}
 
@@ -8,43 +8,6 @@
     
         {% include 'CiscoSystemsActivityBundle:TimeKeeping:punch_content.html.twig' %}
     
-        {#
-        define a layout which just contains the JS block and whatever else
-        non-visible functionality you need, have another layout extend that,
-        which is your site layout, and the individual views extend the first
-        (minimal) layout
-        #}
-    
     {% endblock %}
     
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-    <script src="{{ asset( 'bundles/ciscoactivity/js/jquery.stopwatch.js' ) }}"></script>
-    <script>
-        $(function()
-        {
-            $( '.meep' ).each(function()
-            {
-                var options = {
-                    started: stopwatchStarted,
-                    stopped: stopwatchStopped
-                };
-                if ( $( this ).hasClass( 'running' ))
-                {
-                    options.autostart = true;
-                }
-                $( this ).stopwatch( options );
-            });
-        });
-        function stopwatchStarted()
-        {
-            console.log( 'started' );
-        }
-        function stopwatchStopped()
-        {
-            console.log( 'stopped' );
-        }
-    </script>
 {% endblock %}

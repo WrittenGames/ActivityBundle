@@ -1,8 +1,28 @@
 
 $(function()
 {
-    setInterval( refreshClock, 1000 );
+    //setInterval( refreshClock, 1000 );
+    $( '.punchclock' ).each(function()
+    {
+        var options = {
+            started: stopwatchStarted,
+            stopped: stopwatchStopped
+        };
+        if ( $( this ).hasClass( 'running' ))
+        {
+            options.autostart = true;
+        }
+        $( this ).stopwatch( options );
+    });
 });
+function stopwatchStarted()
+{
+    console.log( 'started' );
+}
+function stopwatchStopped()
+{
+    console.log( 'stopped' );
+}
 function refreshClock()
 {
     var now = new Date();

@@ -1,13 +1,12 @@
 {% extends 'CiscoSystemsActivityBundle::base.html.twig' %}
 
 {% block body %}
-    <h1>Dashboard</h1>
     <div class="row">
         <div class="span8">
-            {% render 'CiscoSystemsActivityBundle:TimeKeeping:punch' %}
+            {% render 'CiscoSystemsActivityBundle:TimeKeeping:punch' with {'embedded': true} %}
         </div>
         <div class="span4 pull-right">
-            {% render 'CiscoSystemsActivityBundle:Project:list' %}
+            {% render 'CiscoSystemsActivityBundle:Project:list' with {'embedded': true} %}
         </div>
     </div>
 {% endblock %}
