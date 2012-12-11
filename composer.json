@@ -16,7 +16,7 @@
         "stof/doctrine-extensions-bundle": "dev-master"
     },
     "suggest": {
-        "doctrine/mongodb-odm-bundle": "*"
+        "doctrine/mongodb-odm-bundle": "for persistence"
     },
     "autoload": {
         "psr-0": { "CiscoSystems\\ActivityBundle": "" }

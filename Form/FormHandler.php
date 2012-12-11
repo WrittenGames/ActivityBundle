@@ -2,7 +2,7 @@
 
 namespace CiscoSystems\ActivityBundle\Form;
 
-use CiscoSystems\ActivityBundle\Model\ManagerInterface;
+use CiscoSystems\ActivityBundle\Model\AbstractManager;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -12,7 +12,7 @@ class FormHandler
     protected $instanceManager;
     protected $form;
 
-    public function __construct( FormInterface $form, Request $request, ManagerInterface $instanceManager )
+    public function __construct( FormInterface $form, Request $request, AbstractManager $instanceManager )
     {
         $this->form = $form;
         $this->request = $request;
